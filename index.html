@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flug der Fantasie – Begleitete virtuelle Ausflüge, Golf, Entspannung und persönliche Betreuung für Seniorinnen, Senioren und Genießer.">
+    <title>Flug der Fantasie – Begleitete Virtuelle Realität</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #14284b;
+            --primary-light: #1e3b6d;
+            --accent: #b8860b;
+            --accent-hover: #9a6f08;
+            --teal: #0f766e;
+            --bg-warm: #fdfbf7;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-soft: #e2e8f0;
+            --shadow-sm: 0 4px 16px rgba(20, 40, 75, 0.06);
+            --shadow-md: 0 12px 32px rgba(20, 40, 75, 0.12);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-warm);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--primary);
+            line-height: 1.25;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-soft);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .brand img {
+            height: 60px;
+            width: auto;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .brand-sub {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f3efe6 100%);
+            padding: 4rem 1.5rem 4.5rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .hero-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-logo-wrap {
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-logo-wrap img {
+            max-height: 110px;
+            width: auto;
+            border-radius: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(184, 134, 11, 0.14);
+            color: #855e00;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.95rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero h1 {
+            font-size: 2.55rem;
+            margin-bottom: 1.15rem;
+        }
+
+        .hero-lead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-highlights {
+            list-style: none;
+            margin-bottom: 2rem;
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .hero-highlights li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .check-icon {
+            color: var(--teal);
+            font-weight: 800;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 560px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.25s ease;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(20, 40, 75, 0.22);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-ai {
+            background-color: #ffffff;
+            color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-ai:hover {
+            background-color: #f0f4fa;
+            transform: translateY(-2px);
+        }
+
+        .btn-mail {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-mail:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-soft);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 410px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .hero-caption {
+            margin-top: 0.9rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        /* Section Generic */
+        section {
+            padding: 4.5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 3.25rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.15rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Alternating Feature Blocks (1. Virtuelle Reisen, 2. Golf & Spiele, etc.) */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .experience-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+        }
+
+        .experience-item.reverse .exp-media {
+            order: 2;
+        }
+
+        .experience-item.reverse .exp-content {
+            order: 1;
+        }
+
+        .exp-media {
+            min-height: 330px;
+            position: relative;
+            background: #e2e8f0;
+        }
+
+        .exp-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exp-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(20, 40, 75, 0.9);
+            color: #ffffff;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .exp-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .exp-content h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .exp-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            display: grid;
+            gap: 0.5rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .exp-bullets li::before {
+            content: "✓ ";
+            color: var(--teal);
+            font-weight: 800;
+        }
+
+        /* Contact & Booking Banner */
+        .booking-section {
+            background: var(--primary);
+            color: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 2.5rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .booking-section h2 {
+            color: #ffffff;
+            font-size: 2.1rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .booking-section p {
+            color: #dbeafe;
+            max-width: 720px;
+            margin: 0 auto 2.25rem;
+            font-size: 1.1rem;
+        }
+
+        .booking-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            justify-content: center;
+            align-items: stretch;
+            margin-bottom: 2.25rem;
+        }
+
+        .booking-buttons .btn {
+            max-width: 480px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .btn-gold-solid {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .btn-gold-solid:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-white-solid {
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        .btn-white-solid:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 1rem;
+        }
+
+        .contact-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-bar a:hover {
+            text-decoration: underline;
+            color: #fde68a;
+        }
+
+        /* Author Section at the bottom */
+        .author-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .author-card {
+            background: var(--bg-warm);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.75rem;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-photo-wrap {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 4px solid #ffffff;
+            background: #e2e8f0;
+        }
+
+        .author-photo-wrap img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .author-badge {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .author-quote {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            background: #ffffff;
+            padding: 1.65rem;
+            border-left: 5px solid var(--accent);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .author-pillars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pillar-tag {
+            background: rgba(20, 40, 75, 0.08);
+            color: var(--primary);
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1d36;
+            color: #cbd5e1;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        footer a {
+            color: #fde68a;
+            text-decoration: none;
+        }
+
+        /* Modal for Contact Form & AI Assistant */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            width: 100%;
+            max-width: 560px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            animation: popIn 0.22s ease-out;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-header h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.65rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* AI Chat UI */
+        .chat-window {
+            height: 310px;
+            overflow-y: auto;
+            background: #f8fafc;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .msg {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .msg-bot {
+            background: #ffffff;
+            border: 1px solid var(--border-soft);
+            color: var(--text-main);
+            align-self: flex-start;
+        }
+
+        .msg-user {
+            background: var(--primary);
+            color: #ffffff;
+            align-self: flex-end;
+        }
+
+        .quick-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .chip {
+            background: #eef2ff;
+            color: var(--primary);
+            border: 1px solid #c7d2fe;
+            border-radius: 999px;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            background: #dbeafe;
+        }
+
+        .chat-input-row {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .chat-input-row input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 920px) {
+            .hero-grid,
+            .experience-item,
+            .author-card {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item.reverse .exp-media,
+            .experience-item.reverse .exp-content {
+                order: unset;
+            }
+
+            .hero h1 {
+                font-size: 2.05rem;
+            }
+
+            .author-photo-wrap img {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#top" class="brand">
+                <img src="IMG_9038.jpeg" alt="Flug der Fantasie Logo" onerror="this.style.display='none'">
+                <div class="brand-text">
+                    <span class="brand-title">Flug der Fantasie</span>
+                    <span class="brand-sub">Reisen • Erleben • Entspannen</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#reisen">Virtuelle Reisen</a>
+                <a href="#golf-spiele">Golf &amp; Spiele</a>
+                <a href="#weitere-erlebnisse">Weitere Angebote</a>
+                <a href="#kontakt">Termin &amp; Kontakt</a>
+                <a href="#autor">Über mich</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+        <div class="hero-grid">
+            <div>
+                <div class="hero-logo-wrap">
+                    <img src="IMG_9038.jpeg" alt="Flug der Fantasie Emblem" onerror="this.style.display='none'">
+                </div>
+                <span class="badge">Begleitete Virtuelle Realität für Seniorinnen, Senioren &amp; Genießer</span>
+                <h1>Entdecken Sie neue Orte bequem im Sitzen – sicher und persönlich begleitet</h1>
+                <p class="hero-lead">
+                    Erleben Sie faszinierende Weltreisen, entspannte Golfpartien und wohltuende Naturmomente ohne Reiseanstrengung. Mit einfacher Einführung, persönlicher Betreuung und der Möglichkeit, jederzeit zu pausieren – wir bringen das Erlebnis direkt zu Ihnen.
+                </p>
+
+                <ul class="hero-highlights">
+                    <li><span class="check-icon">✓</span> <span><strong>Bequem &amp; sicher im Sitzen:</strong> Schritt-für-Schritt-Einführung ganz ohne Vorkenntnisse</span></li>
+                    <li><span class="check-icon">✓</span> <span><strong>Persönlicher Hausbesuch:</strong> Wir kommen direkt zu Ihnen nach Hause oder in Ihre Seniorenrunde</span></li>
+                    <li><span class="check-icon">✓</span> <span><strong>Individuell abgestimmt:</strong> Jedes Programm richtet sich nach Ihren Wünschen und Ihrer Verfassung</span></li>
+                </ul>
+
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-primary" onclick="openBookingModal()">
+                        <span>✉️</span>
+                        <span>Für Kontakt und Terminvereinbarung schreiben Sie bitte eine kurze Nachricht und beschreiben Sie Ihr Anliegen</span>
+                    </button>
+
+                    <button type="button" class="btn btn-ai" onclick="openAiModal()">
+                        <span>🤖</span>
+                        <span>Verbindung mit dem KI-Assistenten</span>
+                    </button>
+
+                    <a href="mailto:flugderfantasie@gmail.com?subject=Anfrage%20%E2%80%93%20Flug%20der%20Fantasie" class="btn btn-mail">
+                        <span>📧</span>
+                        <span>Direkt E-Mail senden: flugderfantasie@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1000&q=80" alt="Gemeinsam virtuelle Welten im Sitzen entdecken">
+                    <div class="hero-caption">
+                        Allein, mit der Familie oder in der Seniorenrunde – unvergessliche Momente erleben
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Experiences Section -->
+    <section id="reisen">
+        <div class="container">
+            <div class="section-header">
+                <h2>Unsere begleitete Erlebniswelt</h2>
+                <p>Wählen Sie Ihr persönliches Wunschprogramm – von atemberaubenden Panoramen bis hin zu spielerischer Bewegung und tiefer Entspannung.</p>
+            </div>
+
+            <div class="experience-list">
+
+                <!-- 1. Virtuelle Reisen -->
+                <article class="experience-item">
+                    <div class="exp-media">
+                        <span class="exp-tag">1. Beliebtestes Erlebnis</span>
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1000&q=80" alt="Virtuelle Weltreisen und Alpenpanoramen">
+                    </div>
+                    <div class="exp-content">
+                        <h3>Virtuelle Weltreisen &amp; Naturpanoramen</h3>
+                        <p>
+                            Entdecken Sie ferne Länder, historische Städte, sonnige Küsten und majestätische Alpenpanoramen sicher vom Sessel aus. Alles wirkt atemberaubend realistisch – ganz ohne Kofferpacken, Wartezeiten oder körperliche Anstrengung.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Berühmte Sehenswürdigkeiten, Weltstädte und Traumstrände besuchen</li>
+                            <li>Vertraute Heimatorte oder Sehnsuchtsziele wiederentdecken</li>
+                            <li>Jederzeit Pausen möglich – in Ihrem eigenen Tempo</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 2. Golf & Spiele mit Instruktor -->
+                <article class="experience-item reverse" id="golf-spiele">
+                    <div class="exp-media">
+                        <span class="exp-tag">2. Aktiv &amp; Spielerisch</span>
+                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1000&q=80" alt="Virtuelles Golf und Freizeitspiele mit Instruktor">
+                    </div>
+                    <div class="exp-content">
+                        <h3>Golf &amp; Freizeitspiele mit persönlichem Instruktor</h3>
+                        <p>
+                            Ob eine ruhige Runde Golf auf gepflegten Grüns, sanftes Tennis oder spielerische Übungen für Koordination und Feinmotorik: Ein persönlicher Instruktor begleitet Sie Schritt für Schritt für sicheren Spielspaß und leichte Bewegung.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Virtuelles Golfspielen im Sitzen oder Stehen – ganz nach Wunsch</li>
+                            <li>Fördert spielerisch Beweglichkeit, Konzentration und Freude</li>
+                            <li>Geduldige Anleitung ohne Leistungsdruck</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 3. Entspannung & Ruhe -->
+                <article class="experience-item" id="weitere-erlebnisse">
+                    <div class="exp-media">
+                        <span class="exp-tag">3. Wohlfühlen &amp; Balance</span>
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Entspannung und Ruhe in idyllischen Naturlandschaften">
+                    </div>
+                    <div class="exp-content">
+                        <h3>Entspannung, Ruhe &amp; geführte Meditation</h3>
+                        <p>
+                            Finden Sie inneren Frieden an einem stillen Bergsee, am Meeresrauschen oder auf einer blühenden Sommerwiese. Beruhigende VR-Naturwelten und sanfte Achtsamkeitsübungen helfen dabei, den Alltag loszulassen und neue Kraft zu schöpfen.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Idyllische Naturkulissen mit sanften Klängen</li>
+                            <li>Wohltuend für Seele, Gelassenheit und inneres Gleichgewicht</li>
+                            <li>Ideal zum Abschalten und Auftanken</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 4. Film über sich selbst & Gemeinsam Erleben -->
+                <article class="experience-item reverse">
+                    <div class="exp-media">
+                        <span class="exp-tag">4. Persönliche Erinnerungen</span>
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80" alt="Gemeinsam Erleben und persönlicher Erinnerungsfilm">
+                    </div>
+                    <div class="exp-content">
+                        <h3>Film über sich selbst &amp; Gemeinsam Erleben</h3>
+                        <p>
+                            Ihr Leben als Meisterwerk: Wir gestalten einen exklusiven VR-Erinnerungsfilm aus Ihren persönlichen Fotos, Geschichten und Momenten. Zudem können Sie wertvolle Erlebnisse gemeinsam mit Familie, Enkeln oder Freunden teilen.
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Individueller VR-Film aus Ihren eigenen Lebenserinnerungen</li>
+                            <li>Gemeinsame Erlebnisse für Paare, Familien und Seniorenrunden</li>
+                            <li>Unverbindliche erste Probesitzung zum Kennenlernen</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Callout -->
+    <section id="kontakt">
+        <div class="container">
+            <div class="booking-section">
+                <h2>Jetzt unverbindlich erste Probesitzung vereinbaren</h2>
+                <p>
+                    Starten Sie ganz unkompliziert – wir kommen zu Ihnen! Schreiben Sie uns Ihr Anliegen oder stellen Sie unserem KI-Assistenten direkt Ihre Fragen.
+                </p>
+
+                <div class="booking-buttons">
+                    <button type="button" class="btn btn-gold-solid" onclick="openBookingModal()">
+                        <span>✉️</span>
+                        <span>Für Kontakt und Terminvereinbarung schreiben Sie bitte eine kurze Nachricht und beschreiben Sie Ihr Anliegen</span>
+                    </button>
+
+                    <button type="button" class="btn btn-white-solid" onclick="openAiModal()">
+                        <span>🤖</span>
+                        <span>Verbindung mit dem KI-Assistenten</span>
+                    </button>
+                </div>
+
+                <div class="contact-bar">
+                    <a href="mailto:flugderfantasie@gmail.com">📧 flugderfantasie@gmail.com</a>
+                    <a href="tel:+4917660468555">📞 +49 176 60468555 (Telefon &amp; WhatsApp)</a>
+                    <a href="https://flugderfantasie.de" target="_blank" rel="noopener">🌐 flugderfantasie.de</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section at the very bottom -->
+    <section class="author-section" id="autor">
+        <div class="container">
+            <div class="author-card">
+                <div class="author-photo-wrap">
+                    <img src="IMG_1202.jpeg" alt="Gründer und persönlicher Begleiter von Flug der Fantasie">
+                </div>
+                <div class="author-info">
+                    <span class="author-badge">Über den Gründer &amp; Begleiter</span>
+                    <h2>Vertrauen, Erfahrung und menschliche Nähe</h2>
+                    <blockquote class="author-quote">
+                        „In meiner Vergangenheit war ich zunächst Sportler und anschließend Trainer – wie ein roter Faden zog sich dabei mein Beruf als Psychologe durch mein Leben, und auch als Freiwilliger durfte ich Menschen unterstützen. Heute bin ich selbstständig tätig und bleibe ein verlässlicher Begleiter in dem neuen Bereich der virtuellen Realität.“
+                    </blockquote>
+                    <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+                        Diese Verbindung aus sportlicher Begeisterung, psychologischer Einfühlsamkeit und jahrelanger Erfahrung im Umgang mit Menschen bildet das Fundament von <strong>Flug der Fantasie</strong>. Jede Sitzung wird mit Ruhe, Respekt und persönlicher Aufmerksamkeit gestaltet.
+                    </p>
+                    <div class="author-pillars">
+                        <span class="pillar-tag">Sportler &amp; Trainer</span>
+                        <span class="pillar-tag">Dipl. Psychologe</span>
+                        <span class="pillar-tag">Freiwilliges Engagement</span>
+                        <span class="pillar-tag">Ihr VR-Begleiter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            <strong>Flug der Fantasie</strong> • <a href="https://flugderfantasie.de">flugderfantasie.de</a> •
+            E-Mail: <a href="mailto:flugderfantasie@gmail.com">flugderfantasie@gmail.com</a> •
+            Tel. &amp; WhatsApp: <a href="tel:+4917660468555">+49 176 60468555</a>
+        </p>
+        <p style="margin-top: 0.6rem; opacity: 0.8;">
+            © 2026 Flug der Fantasie – Begleitete virtuelle Ausflüge, Golf &amp; Entspannung. Alle Rechte vorbehalten.
+        </p>
+    </footer>
+
+    <!-- Booking / Contact Modal -->
+    <div class="modal-backdrop" id="bookingModal" aria-hidden="true">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Kontakt &amp; Terminvereinbarung</h3>
+                <button type="button" class="close-btn" onclick="closeBookingModal()" aria-label="Schließen">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+                    Für Kontakt und Terminvereinbarung schreiben Sie bitte eine kurze Nachricht und beschreiben Sie Ihr Anliegen. Ihre Anfrage wird direkt an <strong>flugderfantasie@gmail.com</strong> vorbereitet.
+                </p>
+                <form onsubmit="sendBookingEmail(event)">
+                    <div class="form-group">
+                        <label for="senderName">Ihr Name</label>
+                        <input type="text" id="senderName" required placeholder="z. B. Maria Müller">
+                    </div>
+                    <div class="form-group">
+                        <label for="senderContact">Ihre Telefonnummer oder E-Mail-Adresse</label>
+                        <input type="text" id="senderContact" required placeholder="z. B. 0176 ... oder name@beispiel.de">
+                    </div>
+                    <div class="form-group">
+                        <label for="senderMessage">Ihr Anliegen / Wunschtermin</label>
+                        <textarea id="senderMessage" rows="4" required placeholder="Beschreiben Sie kurz Ihr Anliegen (z. B. virtuelle Weltreise, Golf, Probesitzung zu Hause)..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <span>✉️</span>
+                        <span>Nachricht an flugderfantasie@gmail.com öffnen</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Assistant Modal -->
+    <div class="modal-backdrop" id="aiModal" aria-hidden="true">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>🤖 KI-Assistent – Flug der Fantasie</h3>
+                <button type="button" class="close-btn" onclick="closeAiModal()" aria-label="Schließen">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-window" id="chatWindow">
+                    <div class="msg msg-bot">
+                        Herzlich willkommen bei <strong>Flug der Fantasie</strong>! Ich bin Ihr digitaler Assistent. Wie kann ich Ihnen helfen? Fragen Sie mich gerne zu virtuellen Weltreisen, Golf, dem Ablauf zu Hause oder einer Probesitzung.
+                    </div>
+                </div>
+
+                <div class="quick-questions">
+                    <button type="button" class="chip" onclick="askPreset('Wie läuft eine Probesitzung ab?')">Wie läuft eine Probesitzung ab?</button>
+                    <button type="button" class="chip" onclick="askPreset('Brauche ich Vorkenntnisse?')">Brauche ich Vorkenntnisse?</button>
+                    <button type="button" class="chip" onclick="askPreset('Welche Reisen und Spiele gibt es?')">Welche Reisen &amp; Spiele gibt es?</button>
+                    <button type="button" class="chip" onclick="askPreset('Wie kann ich einen Termin vereinbaren?')">Termin vereinbaren</button>
+                </div>
+
+                <div class="chat-input-row">
+                    <input type="text" id="aiInput" placeholder="Ihre Frage eingeben..." onkeydown="if(event.key==='Enter') sendAiMessage()">
+                    <button type="button" class="btn btn-primary" style="padding: 0.7rem 1.1rem;" onclick="sendAiMessage()">Senden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+        }
+
+        function openAiModal() {
+            document.getElementById('aiModal').classList.add('active');
+        }
+
+        function closeAiModal() {
+            document.getElementById('aiModal').classList.remove('active');
+        }
+
+        function sendBookingEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('senderName').value.trim();
+            const contact = document.getElementById('senderContact').value.trim();
+            const message = document.getElementById('senderMessage').value.trim();
+
+            const subject = encodeURIComponent('Termin- und Kontaktanfrage – ' + name);
+            const body = encodeURIComponent(
+                'Guten Tag,
+
+' +
+                'Name: ' + name + '
+' +
+                'Rückruf / Kontakt: ' + contact + '
+
+' +
+                'Anliegen:
+' + message + '
+
+' +
+                'Mit freundlichen Grüßen
+' + name
+            );
+
+            window.location.href = 'mailto:flugderfantasie@gmail.com?subject=' + subject + '&body=' + body;
+            closeBookingModal();
+        }
+
+        function appendMessage(text, isUser) {
+            const win = document.getElementById('chatWindow');
+            const div = document.createElement('div');
+            div.className = 'msg ' + (isUser ? 'msg-user' : 'msg-bot');
+            div.innerHTML = text;
+            win.appendChild(div);
+            win.scrollTop = win.scrollHeight;
+        }
+
+        function getBotReply(query) {
+            const q = query.toLowerCase();
+            if (q.includes('probe') || q.includes('ablauf') || q.includes('hause')) {
+                return 'Bei einer unverbindlichen Probesitzung kommen wir direkt zu Ihnen nach Hause. Sie sitzen ganz bequem im Sessel, erhalten eine ruhige Schritt-für-Schritt-Einführung und können das Erlebnis jederzeit pausieren.';
+            }
+            if (q.includes('vorkenntnis') || q.includes('technik') || q.includes('schwer') || q.includes('brille')) {
+                return 'Sie benötigen keinerlei Vorkenntnisse! Die VR-Brille wird vollständig für Sie eingerichtet und Sie werden während der gesamten Zeit persönlich von einem erfahrenen Begleiter betreut.';
+            }
+            if (q.includes('golf') || q.includes('spiel') || q.includes('reise') || q.includes('angebot')) {
+                return 'Wir bieten begleitete virtuelle Weltreisen (Alpen, Meer, Weltstädte), Golf und Freizeitspiele mit Instruktor, beruhigende Natur-Meditationen sowie persönliche Erinnerungsfilme.';
+            }
+            if (q.includes('termin') || q.includes('kontakt') || q.includes('preis') || q.includes('kosten') || q.includes('telefon')) {
+                return 'Gerne! Schreiben Sie uns einfach an <strong>flugderfantasie@gmail.com</strong> oder rufen Sie uns an / schreiben Sie per WhatsApp unter <strong>+49 176 60468555</strong>. Sie können auch direkt oben das Kontaktformular nutzen.';
+            }
+            return 'Vielen Dank für Ihre Frage! Für eine persönliche Beratung erreichen Sie uns direkt per E-Mail unter <strong>flugderfantasie@gmail.com</strong> oder telefonisch unter <strong>+49 176 60468555</strong>.';
+        }
+
+        function askPreset(question) {
+            appendMessage(question, true);
+            setTimeout(() => {
+                appendMessage(getBotReply(question), false);
+            }, 300);
+        }
+
+        function sendAiMessage() {
+            const input = document.getElementById('aiInput');
+            const text = input.value.trim();
+            if (!text) return;
+            appendMessage(text, true);
+            input.value = '';
+            setTimeout(() => {
+                appendMessage(getBotReply(text), false);
+            }, 350);
+        }
+
+        window.addEventListener('click', function(e) {
+            if (e.target.id === 'bookingModal') closeBookingModal();
+            if (e.target.id === 'aiModal') closeAiModal();
+        });
+    </script>
+</body>
+</html>
