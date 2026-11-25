@@ -35,6 +35,8 @@
         html {
             scroll-behavior: smooth;
             font-size: 18px;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -42,6 +44,7 @@
             background-color: var(--bg-warm);
             color: var(--text-main);
             line-height: 1.65;
+            max-width: 100%;
             overflow-x: hidden;
         }
 
@@ -569,6 +572,40 @@
             font-weight: 600;
         }
 
+        /* Datenschutz Section */
+        .privacy-section {
+            background: var(--bg-warm);
+            border-top: 1px solid var(--border-soft);
+            padding: 3.5rem 1.5rem;
+        }
+
+        .privacy-card {
+            background: #ffffff;
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .privacy-card h2 {
+            font-size: 1.65rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-card h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1.25rem 0 0.4rem;
+        }
+
+        .privacy-card p {
+            margin-bottom: 0.65rem;
+        }
+
         /* Footer */
         footer {
             background: #0f1d36;
@@ -583,6 +620,10 @@
             text-decoration: none;
         }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         /* Modal for Contact Form & AI Assistant */
         .modal-backdrop {
             position: fixed;
@@ -594,6 +635,7 @@
             justify-content: center;
             padding: 1rem;
             z-index: 1000;
+            overflow-y: auto;
         }
 
         .modal-backdrop.active {
@@ -608,6 +650,7 @@
             box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             animation: popIn 0.22s ease-out;
+            margin: auto;
         }
 
         @keyframes popIn {
@@ -667,6 +710,40 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
+        }
+
+        .consent-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            margin-bottom: 1.15rem;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 0.75rem 0.9rem;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: var(--text-main);
+        }
+
+        .consent-row input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .consent-row label {
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .consent-row a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: underline;
         }
 
         /* AI Chat UI */
@@ -739,6 +816,26 @@
             font-size: 0.95rem;
         }
 
+        .nav-container,
+        .hero-grid > div,
+        .experience-item > div,
+        .exp-content,
+        .author-card > div,
+        .author-info,
+        .booking-section,
+        .privacy-card {
+            min-width: 0;
+            max-width: 100%;
+        }
+
+        .btn,
+        .contact-bar a,
+        .pillar-tag {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
         @media (max-width: 920px) {
             .hero-grid,
             .experience-item,
@@ -757,6 +854,40 @@
 
             .author-photo-wrap img {
                 height: 360px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .exp-content,
+            .booking-section,
+            .author-card,
+            .privacy-card {
+                padding: 1.5rem 1.15rem;
+            }
+
+            .author-quote {
+                padding: 1.1rem;
+                font-size: 1rem;
+            }
+
+            .contact-bar {
+                gap: 0.9rem;
             }
         }
     </style>
@@ -779,6 +910,7 @@
                 <a href="#weitere-erlebnisse">Weitere Angebote</a>
                 <a href="#kontakt">Termin &amp; Kontakt</a>
                 <a href="#autor">Über mich</a>
+                <a href="#datenschutz">Datenschutz</a>
             </nav>
         </div>
     </header>
@@ -955,7 +1087,7 @@
         </div>
     </section>
 
-    <!-- Author Section at the very bottom -->
+    <!-- Author Section -->
     <section class="author-section" id="autor">
         <div class="container">
             <div class="author-card">
@@ -964,7 +1096,7 @@
                 </div>
                 <div class="author-info">
                     <span class="author-badge">Über den Gründer &amp; Begleiter</span>
-                    <div class="author-name">Alexey Olegowitsch Postoronko</div>
+                    <div class="author-name">Alexey (Oleksii) Olegowitsch Postoronko</div>
                     <h2>Vertrauen, Erfahrung und menschliche Nähe</h2>
                     <blockquote class="author-quote">
                         „In meiner Vergangenheit war ich zunächst Sportler und anschließend Trainer – wie ein roter Faden zog sich dabei mein Beruf als Psychologe durch mein Leben, und auch als Freiwilliger durfte ich Menschen unterstützen. Heute bin ich selbstständig tätig und bleibe ein verlässlicher Begleiter in dem neuen Bereich der virtuellen Realität.“
@@ -974,11 +1106,52 @@
                     </p>
                     <div class="author-pillars">
                         <span class="pillar-tag">Sportler &amp; Trainer</span>
-                        <span class="pillar-tag">Dipl. Psychologe aus der Ukraine</span>
+                        <span class="pillar-tag">Diplom-Psychologe aus der Ukraine</span>
                         <span class="pillar-tag">Freiwilliges Engagement</span>
                         <span class="pillar-tag">Ihr VR-Begleiter</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Datenschutzerklärung (DSGVO) -->
+    <section class="privacy-section" id="datenschutz">
+        <div class="container">
+            <div class="privacy-card">
+                <h2>Datenschutzerklärung (DSGVO)</h2>
+                <p>
+                    Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG/TDDDG). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website <strong>flugderfantasie.de</strong>.
+                </p>
+
+                <h3>1. Verantwortlicher</h3>
+                <p>
+                    Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
+                    <strong>Alexey (Oleksii) Olegowitsch Postoronko</strong> – Flug der Fantasie<br>
+                    Anschrift: [Stromberger Str. 36, 55411 Bingen am Rhein]<br>
+                    Telefon &amp; WhatsApp: +49 176 60468555<br>
+                    E-Mail: flugderfantasie@gmail.com
+                </p>
+
+                <h3>2. Hosting und Zugriffsdaten</h3>
+                <p>
+                    Diese Website wird über GitHub Pages (GitHub Inc.) und Cloudflare (Cloudflare, Inc.) bereitgestellt. Beim Aufruf der Website werden durch den Browser automatisch technische Verbindungsdaten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp) verarbeitet, um die Sicherheit und Stabilität der Auslieferung zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).
+                </p>
+
+                <h3>3. Kontaktaufnahme per Formular, E-Mail, Telefon oder WhatsApp</h3>
+                <p>
+                    Wenn Sie über das Kontaktformular auf dieser Website, per E-Mail, telefonisch oder per WhatsApp Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten (Name, Kontaktdaten, Ihr Anliegen) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Das Kontaktformular öffnet Ihr eigenes E-Mail-Programm zur direkten Übermittlung an <strong>flugderfantasie@gmail.com</strong>; es erfolgt keine automatische Speicherung in einer Website-Datenbank. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung bzw. zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und lit. b DSGVO). Diese Daten geben wir nicht ohne Ihre Einwilligung an Dritte weiter.
+                </p>
+
+                <h3>4. Digitaler Assistent auf der Website</h3>
+                <p>
+                    Der auf dieser Website integrierte Info-Assistent beantwortet häufige Fragen lokal direkt in Ihrem Browser, ohne Ihre Eingaben an externe Server zu übertragen.
+                </p>
+
+                <h3>5. Ihre Rechte nach der DSGVO</h3>
+                <p>
+                    Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO), Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO) sowie Widerspruch (Art. 21 DSGVO) zu. Zudem haben Sie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde (z. B. dem Landesbeauftragten für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz).
+                </p>
             </div>
         </div>
     </section>
@@ -988,7 +1161,8 @@
         <p>
             <strong>Flug der Fantasie</strong> • <a href="https://flugderfantasie.de">flugderfantasie.de</a> •
             E-Mail: <a href="mailto:flugderfantasie@gmail.com">flugderfantasie@gmail.com</a> •
-            Tel. &amp; WhatsApp: <a href="tel:+4917660468555">+49 176 60468555</a>
+            Tel. &amp; WhatsApp: <a href="tel:+4917660468555">+49 176 60468555</a> •
+            <a href="#datenschutz">Datenschutzerklärung</a>
         </p>
         <p style="margin-top: 0.6rem; opacity: 0.8;">
             © 2026 Flug der Fantasie – Begleitete virtuelle Ausflüge, Golf &amp; Entspannung. Alle Rechte vorbehalten.
@@ -1018,6 +1192,12 @@
                     <div class="form-group">
                         <label for="senderMessage">Ihr Anliegen / Wunschtermin</label>
                         <textarea id="senderMessage" rows="4" required placeholder="Beschreiben Sie kurz Ihr Anliegen (z. B. virtuelle Weltreise, Golf, Probesitzung in Ihrer Einrichtung)..."></textarea>
+                    </div>
+                    <div class="consent-row">
+                        <input type="checkbox" id="privacyConsent" required>
+                        <label for="privacyConsent">
+                            Ich habe die <a href="#datenschutz" onclick="closeBookingModal()">Datenschutzerklärung</a> zur Kenntnis genommen und bin damit einverstanden, dass meine Angaben zur Kontaktaufnahme und Rückfrage verarbeitet werden. *
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
                         <span>✉️</span>
@@ -1076,6 +1256,11 @@
 
         function sendBookingEmail(event) {
             event.preventDefault();
+            const consent = document.getElementById('privacyConsent');
+            if (!consent.checked) {
+                consent.focus();
+                return;
+            }
             const name = document.getElementById('senderName').value.trim();
             const contact = document.getElementById('senderContact').value.trim();
             const message = document.getElementById('senderMessage').value.trim();
@@ -1084,7 +1269,8 @@
             const body = encodeURIComponent(
                 'Guten Tag,\n\n' +
                 'Name: ' + name + '\n' +
-                'Rückruf / Kontakt: ' + contact + '\n\n' +
+                'Rückruf / Kontakt: ' + contact + '\n' +
+                'Datenschutzhinweis: Akzeptiert\n\n' +
                 'Anliegen:\n' + message + '\n\n' +
                 'Mit freundlichen Grüßen\n' + name
             );
