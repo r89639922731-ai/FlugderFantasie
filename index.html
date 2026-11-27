@@ -240,18 +240,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-ai {
-            background-color: #ffffff;
-            color: var(--primary);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn-ai:hover {
-            background-color: #f0f4fa;
-            transform: translateY(-2px);
-        }
-
         .btn-mail {
             background-color: var(--accent);
             color: #ffffff;
@@ -446,16 +434,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-white-solid {
-            background: #ffffff;
-            color: var(--primary);
-        }
-
-        .btn-white-solid:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
-        }
-
         .contact-bar {
             display: flex;
             flex-wrap: wrap;
@@ -572,7 +550,7 @@
             font-weight: 600;
         }
 
-        /* Datenschutz Section */
+        /* Legal & Datenschutz Sections */
         .privacy-section {
             background: var(--bg-warm);
             border-top: 1px solid var(--border-soft);
@@ -624,7 +602,7 @@
             text-decoration: underline;
         }
 
-        /* Modal for Contact Form & AI Assistant */
+        /* Modal for Contact Form */
         .modal-backdrop {
             position: fixed;
             inset: 0;
@@ -746,76 +724,6 @@
             text-decoration: underline;
         }
 
-        /* AI Chat UI */
-        .chat-window {
-            height: 310px;
-            overflow-y: auto;
-            background: #f8fafc;
-            border: 1px solid var(--border-soft);
-            border-radius: 12px;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .msg {
-            max-width: 85%;
-            padding: 0.75rem 1rem;
-            border-radius: 14px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .msg-bot {
-            background: #ffffff;
-            border: 1px solid var(--border-soft);
-            color: var(--text-main);
-            align-self: flex-start;
-        }
-
-        .msg-user {
-            background: var(--primary);
-            color: #ffffff;
-            align-self: flex-end;
-        }
-
-        .quick-questions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.9rem;
-        }
-
-        .chip {
-            background: #eef2ff;
-            color: var(--primary);
-            border: 1px solid #c7d2fe;
-            border-radius: 999px;
-            padding: 0.35rem 0.8rem;
-            font-size: 0.82rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .chip:hover {
-            background: #dbeafe;
-        }
-
-        .chat-input-row {
-            display: flex;
-            gap: 0.6rem;
-        }
-
-        .chat-input-row input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 10px;
-            font-size: 0.95rem;
-        }
-
         .nav-container,
         .hero-grid > div,
         .experience-item > div,
@@ -910,6 +818,7 @@
                 <a href="#weitere-erlebnisse">Weitere Angebote</a>
                 <a href="#kontakt">Termin &amp; Kontakt</a>
                 <a href="#autor">Über mich</a>
+                <a href="#impressum">Impressum</a>
                 <a href="#datenschutz">Datenschutz</a>
             </nav>
         </div>
@@ -938,11 +847,6 @@
                     <button type="button" class="btn btn-primary" onclick="openBookingModal()">
                         <span>✉️</span>
                         <span>Für Kontakt und Terminvereinbarung schreiben Sie bitte eine kurze Nachricht und beschreiben Sie Ihr Anliegen</span>
-                    </button>
-
-                    <button type="button" class="btn btn-ai" onclick="openAiModal()">
-                        <span>🤖</span>
-                        <span>Verbindung mit dem KI-Assistenten</span>
                     </button>
 
                     <a href="mailto:flugderfantasie@gmail.com?subject=Anfrage%20%E2%80%93%20Flug%20der%20Fantasie" class="btn btn-mail">
@@ -1059,18 +963,13 @@
             <div class="booking-section">
                 <h2>Jetzt unverbindlich erste Probesitzung vereinbaren</h2>
                 <p>
-                    Starten Sie ganz unkompliziert – wir kommen direkt in Ihre Einrichtung oder Ihr Pflegeheim! Schreiben Sie uns Ihr Anliegen oder stellen Sie unserem KI-Assistenten direkt Ihre Fragen.
+                    Starten Sie ganz unkompliziert – wir kommen direkt in Ihre Einrichtung oder Ihr Pflegeheim! Schreiben Sie uns Ihr Anliegen per Nachricht oder E-Mail.
                 </p>
 
                 <div class="booking-buttons">
                     <button type="button" class="btn btn-gold-solid" onclick="openBookingModal()">
                         <span>✉️</span>
                         <span>Für Kontakt und Terminvereinbarung schreiben Sie bitte eine kurze Nachricht und beschreiben Sie Ihr Anliegen</span>
-                    </button>
-
-                    <button type="button" class="btn btn-white-solid" onclick="openAiModal()">
-                        <span>🤖</span>
-                        <span>Verbindung mit dem KI-Assistenten</span>
                     </button>
                 </div>
 
@@ -1115,6 +1014,43 @@
         </div>
     </section>
 
+    <!-- Impressum (§ 5 DDG) -->
+    <section class="privacy-section" id="impressum">
+        <div class="container">
+            <div class="privacy-card">
+                <h2>Impressum</h2>
+                <p>
+                    Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG):
+                </p>
+
+                <h3>Anbieter und Verantwortlicher</h3>
+                <p>
+                    <strong>Oleksii Postoronko</strong> – Flug der Fantasie<br>
+                    Stromberger Str. 36<br>
+                    55411 Bingen am Rhein<br>
+                    Deutschland
+                </p>
+
+                <h3>Kontakt</h3>
+                <p>
+                    Telefon &amp; WhatsApp: +49 176 60468555<br>
+                    E-Mail: flugderfantasie@gmail.com<br>
+                    Website: https://flugderfantasie.de
+                </p>
+
+                <h3>Berufsbezeichnung und Qualifikationshinweis</h3>
+                <p>
+                    Begleitete Virtuelle Realität für Einrichtungen und Pflegeheime. Psychologische Ausbildung und Tätigkeit als Psychologe stammen aus der Ukraine; eine deutsche Anerkennung der Berufsbezeichnung liegt nicht vor.
+                </p>
+
+                <h3>Haftung für Inhalte und Links</h3>
+                <p>
+                    Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr gemäß den gesetzlichen Bestimmungen (§§ 8 bis 10 DDG). Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Inhalte umgehend entfernt.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Datenschutzerklärung (DSGVO) -->
     <section class="privacy-section" id="datenschutz">
         <div class="container">
@@ -1128,7 +1064,7 @@
                 <p>
                     Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
                     <strong>Oleksii Postoronko</strong> – Flug der Fantasie<br>
-                    Anschrift: [Stromberger Str. 36, 55411 Bingen am Rhein]<br>
+                    Anschrift: Stromberger Str. 36, 55411 Bingen am Rhein<br>
                     Telefon &amp; WhatsApp: +49 176 60468555<br>
                     E-Mail: flugderfantasie@gmail.com
                 </p>
@@ -1143,12 +1079,7 @@
                     Wenn Sie über das Kontaktformular auf dieser Website, per E-Mail, telefonisch oder per WhatsApp Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten (Name, Kontaktdaten, Ihr Anliegen) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Das Kontaktformular öffnet Ihr eigenes E-Mail-Programm zur direkten Übermittlung an <strong>flugderfantasie@gmail.com</strong>; es erfolgt keine automatische Speicherung in einer Website-Datenbank. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung bzw. zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und lit. b DSGVO). Diese Daten geben wir nicht ohne Ihre Einwilligung an Dritte weiter.
                 </p>
 
-                <h3>4. Digitaler Assistent auf der Website</h3>
-                <p>
-                    Der auf dieser Website integrierte Info-Assistent beantwortet häufige Fragen lokal direkt in Ihrem Browser, ohne Ihre Eingaben an externe Server zu übertragen.
-                </p>
-
-                <h3>5. Ihre Rechte nach der DSGVO</h3>
+                <h3>4. Ihre Rechte nach der DSGVO</h3>
                 <p>
                     Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO), Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO) sowie Widerspruch (Art. 21 DSGVO) zu. Zudem haben Sie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde (z. B. dem Landesbeauftragten für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz).
                 </p>
@@ -1162,6 +1093,7 @@
             <strong>Flug der Fantasie</strong> • <a href="https://flugderfantasie.de">flugderfantasie.de</a> •
             E-Mail: <a href="mailto:flugderfantasie@gmail.com">flugderfantasie@gmail.com</a> •
             Tel. &amp; WhatsApp: <a href="tel:+4917660468555">+49 176 60468555</a> •
+            <a href="#impressum">Impressum</a> •
             <a href="#datenschutz">Datenschutzerklärung</a>
         </p>
         <p style="margin-top: 0.6rem; opacity: 0.8;">
@@ -1208,35 +1140,6 @@
         </div>
     </div>
 
-    <!-- AI Assistant Modal -->
-    <div class="modal-backdrop" id="aiModal" aria-hidden="true">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>🤖 KI-Assistent – Flug der Fantasie</h3>
-                <button type="button" class="close-btn" onclick="closeAiModal()" aria-label="Schließen">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="chat-window" id="chatWindow">
-                    <div class="msg msg-bot">
-                        Herzlich willkommen bei <strong>Flug der Fantasie</strong>! Ich bin Ihr digitaler Assistent. Wie kann ich Ihnen helfen? Fragen Sie mich gerne zu virtuellen Weltreisen, Golf, dem Ablauf in Ihrer Einrichtung oder einer Probesitzung.
-                    </div>
-                </div>
-
-                <div class="quick-questions">
-                    <button type="button" class="chip" onclick="askPreset('Wie läuft eine Probesitzung ab?')">Wie läuft eine Probesitzung ab?</button>
-                    <button type="button" class="chip" onclick="askPreset('Brauche ich Vorkenntnisse?')">Brauche ich Vorkenntnisse?</button>
-                    <button type="button" class="chip" onclick="askPreset('Welche Reisen und Spiele gibt es?')">Welche Reisen &amp; Spiele gibt es?</button>
-                    <button type="button" class="chip" onclick="askPreset('Was kostet eine Sitzung?')">Preise &amp; Termin</button>
-                </div>
-
-                <div class="chat-input-row">
-                    <input type="text" id="aiInput" placeholder="Ihre Frage eingeben..." onkeydown="if(event.key==='Enter') sendAiMessage()">
-                    <button type="button" class="btn btn-primary" style="padding: 0.7rem 1.1rem;" onclick="sendAiMessage()">Senden</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         function openBookingModal() {
             document.getElementById('bookingModal').classList.add('active');
@@ -1244,14 +1147,6 @@
 
         function closeBookingModal() {
             document.getElementById('bookingModal').classList.remove('active');
-        }
-
-        function openAiModal() {
-            document.getElementById('aiModal').classList.add('active');
-        }
-
-        function closeAiModal() {
-            document.getElementById('aiModal').classList.remove('active');
         }
 
         function sendBookingEmail(event) {
@@ -1279,54 +1174,10 @@
             closeBookingModal();
         }
 
-        function appendMessage(text, isUser) {
-            const win = document.getElementById('chatWindow');
-            const div = document.createElement('div');
-            div.className = 'msg ' + (isUser ? 'msg-user' : 'msg-bot');
-            div.innerHTML = text;
-            win.appendChild(div);
-            win.scrollTop = win.scrollHeight;
-        }
-
-        function getBotReply(query) {
-            const q = query.toLowerCase();
-            if (q.includes('probe') || q.includes('ablauf') || q.includes('einrichtung') || q.includes('pflegeheim')) {
-                return 'Bei einer unverbindlichen Probesitzung kommen wir direkt in Ihre Einrichtung oder Ihr Pflegeheim. Die Teilnehmenden sitzen ganz bequem im Sessel, erhalten eine ruhige Schritt-für-Schritt-Einführung und können das Erlebnis jederzeit pausieren.';
-            }
-            if (q.includes('vorkenntnis') || q.includes('technik') || q.includes('schwer') || q.includes('brille')) {
-                return 'Sie benötigen keinerlei Vorkenntnisse! Die VR-Brille wird vollständig für Sie eingerichtet und Sie werden während der gesamten Zeit persönlich von einem erfahrenen Begleiter betreut.';
-            }
-            if (q.includes('golf') || q.includes('spiel') || q.includes('reise') || q.includes('angebot')) {
-                return 'Wir bieten begleitete virtuelle Weltreisen (Alpen, Meer, Weltstädte), Golf und Freizeitspiele mit Instruktor, beruhigende Natur-Meditationen sowie persönliche Erinnerungsfilme.';
-            }
-            if (q.includes('termin') || q.includes('kontakt') || q.includes('preis') || q.includes('kosten') || q.includes('telefon')) {
-                return 'Unsere Preise beginnen ab <strong>59 € (45 Minuten)</strong> – den genauen Preis vereinbaren wir individuell nach persönlicher Beratung. Schreiben Sie uns gerne an <strong>flugderfantasie@gmail.com</strong> oder rufen Sie uns an / schreiben Sie per WhatsApp unter <strong>+49 176 60468555</strong>.';
-            }
-            return 'Vielen Dank für Ihre Frage! Für eine persönliche Beratung erreichen Sie uns direkt per E-Mail unter <strong>flugderfantasie@gmail.com</strong> oder telefonisch unter <strong>+49 176 60468555</strong>.';
-        }
-
-        function askPreset(question) {
-            appendMessage(question, true);
-            setTimeout(() => {
-                appendMessage(getBotReply(question), false);
-            }, 300);
-        }
-
-        function sendAiMessage() {
-            const input = document.getElementById('aiInput');
-            const text = input.value.trim();
-            if (!text) return;
-            appendMessage(text, true);
-            input.value = '';
-            setTimeout(() => {
-                appendMessage(getBotReply(text), false);
-            }, 350);
-        }
-
         window.addEventListener('click', function(e) {
             if (e.target.id === 'bookingModal') closeBookingModal();
-            if (e.target.id === 'aiModal') closeAiModal();
         });
     </script>
 </body>
 </html>
+
